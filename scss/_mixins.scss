@@ -10,6 +10,12 @@
   }
 }
 
+@mixin desktop-lg {
+  @media screen and (max-width: 1440px) {
+    @content;
+  }
+}
+
 @mixin mobile {
   @media screen and (max-width: 375px) {
     @content;

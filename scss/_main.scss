@@ -18,6 +18,7 @@ button {
 
 a {
   text-decoration: none;
+  outline: none !important;
   color: #000;
 }
 
@@ -143,8 +144,12 @@ a {
 .header__container-info {
   display: flex;
   justify-content: space-between;
-}
 
+  @include desktop-lg {
+    display: none;
+  }
+
+}
 .header__info-list {
   display: flex;
   gap: 20px;
@@ -201,6 +206,13 @@ a {
   flex-shrink: 0;
   position: relative;
 }
+.filter__category-list li.selected {
+  background: #e2efff;
+  border-radius: 5px;
+}
+.filter__category-list li .filter__category-qty.selected-text {
+  color: $font-primary;
+}
 .filter__category-label {
   padding: 0 16px 0 8px;
   display: flex;
@@ -233,20 +245,7 @@ a {
   font: $general-paragraph-sm;
   position: relative;
 }
-.filter__category-title--space {
-  padding: 0 16px 0 32px;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-between;
-  align-self: stretch;
-  flex-shrink: 0;
-  height: 30px;
-  position: relative;
-}
 .filter__category-title--outlined {
-  background: $font-background-hover;
-  border-radius: 5px;
   padding: 0 16px 0 32px;
   display: flex;
   flex-direction: row;
@@ -257,22 +256,7 @@ a {
   height: 30px;
   position: relative;
 }
-.filter__category-block--outlined {
-  display: flex;
-  flex-direction: row;
-  gap: 0;
-  align-items: flex-start;
-  justify-content: flex-start;
-  flex-shrink: 0;
-  position: relative;
-}
-.filter__category-qty--outlined {
-  color: $font-primary;
-  text-align: right;
-  font: $general-paragraph-sm;
-  opacity: 0.81;
-  position: relative;
-}
+
 .filter__category-price {
   background: $bg-white;
   display: flex;
@@ -862,6 +846,7 @@ a {
 }
 .search-goods-mobile {
   @include tablets-only {
+    margin-top: 8px;
     padding: 8px 16px 0 16px;
     display: flex;
     flex-direction: column;
@@ -880,7 +865,7 @@ a {
     align-items: flex-end;
     justify-content: center;
     flex-shrink: 0;
-    width: 343px;
+    width: 100%;
     position: relative;
   }
 }
