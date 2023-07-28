@@ -5,10 +5,11 @@
   <meta name="viewport"
         content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  
-  
+
+
+  <script src="main.js" defer></script>
   <title>Test</title>
-  <link rel="stylesheet" href="./assets/index-98807521.css">
+  <link rel="stylesheet" href="./assets/index-887635fb.css">
 </head>
 <body>
 <main>
@@ -64,15 +65,7 @@
             </div>
             <span class="filter__category-qty">3</span>
           </li>
-          <li class="filter__category-title--space">
-            <div class="filter__category-block">
-                           <span class="filter__category-name">
-                           <a href="#">Название категории</a>
-                           </span>
-            </div>
-            <div class="filter__category-qty">3</div>
-          </li>
-          <li class="filter__category-title--space">
+          <li class="filter__category-title--outlined">
             <div class="filter__category-block">
                            <span class="filter__category-name">
                            <a href="#">Название категории</a>
@@ -81,12 +74,20 @@
             <div class="filter__category-qty">3</div>
           </li>
           <li class="filter__category-title--outlined">
-            <div class="filter__category-block--outlined">
+            <div class="filter__category-block">
                            <span class="filter__category-name">
                            <a href="#">Название категории</a>
                            </span>
             </div>
-            <div class="filter__category-qty--outlined">3</div>
+            <div class="filter__category-qty">3</div>
+          </li>
+          <li class="filter__category-title--outlined">
+            <div class="filter__category-block">
+                           <span class="filter__category-name">
+                           <a href="#">Название категории</a>
+                           </span>
+            </div>
+            <div class="filter__category-qty">3</div>
           </li>
         </ul>
         <div class="filter__category-price">
@@ -267,10 +268,11 @@
                 />
               </svg>
               <label>
-                <input type="text" placeholder="Запрос">
+                <input type="text" placeholder="Запрос" id="searchMobInput">
               </label>
               <svg
                       class="autocomplete-search-icons"
+                      id="clearIcon"
                       width="20"
                       height="20"
                       viewBox="0 0 20 20"
