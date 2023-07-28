@@ -5,6 +5,7 @@ main,
 main * {
   box-sizing: border-box;
 }
+
 input {
   border: none;
   outline: none;
@@ -31,11 +32,12 @@ a {
   width: 100%;
   position: relative;
 
-  @media screen and (max-width: 375px) {
+  @include tablets-only {
     margin: 0;
     padding: 0;
   }
 }
+
 .header {
   background: #ffffff;
   padding: 12px 0 12px 0;
@@ -49,10 +51,11 @@ a {
   position: relative;
   overflow: hidden;
 
-  @include mobile-only {
+  @include tablets-only {
     display: none;
   }
 }
+
 .header__container {
   display: flex;
   flex-direction: row;
@@ -77,12 +80,13 @@ a {
 .header__container-logo-txt {
   color: #000000;
   text-align: center;
-  font: 400 16px "Inter", sans-serif;
+  font: $mobile-main-md;
   position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
 }
+
 .header__container-catalog {
   border-radius: 8px;
   border-style: solid;
@@ -124,11 +128,7 @@ a {
 
 .filter__price-input {
   color: $font-secondary;
-  font-family: PT Sans, sans-serif;
-  font-size: 14px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: 16px;
+  font: $general-main-md;
 }
 
 .search-goods {
@@ -140,20 +140,6 @@ a {
   line-height: 150%;
 }
 
-._1920__frame-1167 {
-  display: flex;
-  flex-direction: row;
-  gap: 8px;
-  align-items: flex-start;
-  justify-content: flex-start;
-  flex: 1;
-  position: relative;
-}
-._1920__frame {
-  flex-shrink: 0;
-  position: relative;
-  overflow: visible;
-}
 .header__container-info {
   display: flex;
   justify-content: space-between;
@@ -173,19 +159,10 @@ a {
 
 .header__info-list li a {
   color: #393939;
-  font-family: Inter, sans-serif;
-  font-size: 14px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: normal;
+  font: $inter-font-md;
   text-decoration: none;
 }
-._1920__4 {
-  color: #393939;
-  text-align: left;
-  font: 400 14px "Inter", sans-serif;
-  position: relative;
-}
+
 .goods__container {
   display: flex;
   flex-direction: row;
@@ -207,7 +184,7 @@ a {
   width: 280px;
   position: relative;
 
-  @include mobile-only {
+  @include tablets-only {
     display: none;
   }
 }
@@ -247,13 +224,13 @@ a {
 .filter__category-name {
   color: $font-primary;
   text-align: left;
-  font: $general-main-14;
+  font: $general-main-md;
   position: relative;
 }
 .filter__category-qty {
   color: $font-secondary;
   text-align: right;
-  font: var(--general-paragraph-12, 400 12px/14px "PT Sans", sans-serif);
+  font: $general-paragraph-sm;
   position: relative;
 }
 .filter__category-title--space {
@@ -268,7 +245,7 @@ a {
   position: relative;
 }
 .filter__category-title--outlined {
-  background: var(--font-background-hover, #e2efff);
+  background: $font-background-hover;
   border-radius: 5px;
   padding: 0 16px 0 32px;
   display: flex;
@@ -292,8 +269,8 @@ a {
 .filter__category-qty--outlined {
   color: $font-primary;
   text-align: right;
-  font: var(--general-paragraph-12, 400 12px/14px "PT Sans", sans-serif);
-  opacity: 0.800000011920929;
+  font: $general-paragraph-sm;
+  opacity: 0.81;
   position: relative;
 }
 .filter__category-price {
@@ -329,7 +306,7 @@ a {
 .filter__header-text {
   color: $font-primary;
   text-align: center;
-  font: $general-header-filter-16;
+  font: $general-header-md;
   position: relative;
 }
 
@@ -361,7 +338,7 @@ a {
 .filter__slider-label {
   color: $font-secondary;
   text-align: left;
-  font: var(--general-paragraph-12, 400 12px/14px "PT Sans", sans-serif);
+  font: $general-paragraph-sm;
   position: relative;
 }
 .filter__price-input {
@@ -369,7 +346,7 @@ a {
   height: 100%;
   color: $font-primary;
   text-align: left;
-  font: $general-main-14;
+  font: $general-main-md;
   position: relative;
 }
 .filter__divider {
@@ -393,7 +370,7 @@ a {
 .filter__brand-text, .filter__size-text {
   color: $font-primary;
   text-align: left;
-  font: $general-header-filter-16;
+  font: $general-filter-header-md;
   position: relative;
 }
 .filter__brand-btn {
@@ -441,18 +418,13 @@ a {
   flex: 1;
   position: relative;
 }
-._1920__autocomplete-mobile-icon {
-  opacity: 0.30000001192092896;
+.autocomplete-mobile-icon {
+  opacity: 0.31;
   flex-shrink: 0;
   position: relative;
   overflow: visible;
 }
-._1920__8 {
-  color: $font-secondary;
-  text-align: left;
-  font: $general-main-14;
-  position: relative;
-}
+
 .filter__checkbox-container {
   display: flex;
   flex-direction: column;
@@ -465,7 +437,7 @@ a {
 }
 .filter__checkbox-label {
   color: $font-primary;
-  font: $general-main-14;
+  font: $general-main-md;
   padding: 0 16px 0 0;
   display: flex;
   flex-direction: row;
@@ -491,16 +463,10 @@ a {
 
 .filter__header-text-center {
   color: $font-primary;
-  font: $general-header-filter-16;
+  font: $general-filter-header-md;
   position: relative;
 }
 
-._1920__checkbox-auto {
-  border-radius: 3px;
-  flex-shrink: 0;
-  position: relative;
-  overflow: visible;
-}
 .filter__checkbox-attr {
   border-radius: 3px;
   border-style: solid;
@@ -526,6 +492,8 @@ a {
 }
 
 .filter__checkbox-qty {
+  color: $font-secondary;
+  font: $general-paragraph-sm;
   text-align: right;
 }
 
@@ -553,18 +521,18 @@ a {
   flex: 1;
   position: relative;
 
-  @include mobile-only {
+  @include tablets-only {
     margin-bottom: 1.8rem;
   }
   &.goods__category-title {
     display: none;
-    @include mobile-only {
+    @include tablets-only {
       display: block;
       margin-left: 24px;
       margin-bottom: 1.2rem;
       color: $font-primary;
       text-align: left;
-      font: $desktop-header-is-24;
+      font: $desktop-header-lg;
     }
   }
 }
@@ -578,13 +546,13 @@ a {
   align-self: stretch;
   position: relative;
 
-  @media screen and (max-width: 768px) {
+  @include tablets-only {
     margin-top: 2rem;
     justify-content: center;
     gap: 12px;
   }
 
-  @media screen and (max-width: 375px) {
+  @include tablets-only {
     margin-top: 0;
   }
 }
@@ -610,7 +578,7 @@ a {
   overflow: hidden;
 
 
-  @media screen and (max-width: 375px) {
+  @include tablets-only {
     width: 165px;
   }
 }
@@ -635,7 +603,7 @@ a {
   background: $bg-white;
   border-radius: 4px;
   border-style: solid;
-  border-color: var(--tech-scroll-bar, #f2f2f2);
+  border-color: $border-white;
   border-width: 1px;
   padding: 0 8px 0 8px;
   display: flex;
@@ -647,14 +615,14 @@ a {
   height: 32px;
   position: relative;
 
-  @media screen and (max-width: 375px) {
-    font: $general-main-14;
+  @include tablets-only {
+    font: $general-main-md;
   }
 }
 .goods__img-shield-text {
   color: $font-primary;
   text-align: right;
-  font: $general-main-14;
+  font: $general-main-md;
   position: relative;
   display: flex;
   align-items: center;
@@ -677,7 +645,7 @@ a {
 .goods__disc-text {
   color: $bg-white;
   text-align: right;
-  font: $general-header-ac-14;
+  font: $general-header-md;
   position: relative;
   display: flex;
   align-items: center;
@@ -696,14 +664,14 @@ a {
 .goods__brand {
   color: $font-secondary;
   text-align: left;
-  font: $general-main-14;
+  font: $general-main-md;
   position: relative;
   align-self: stretch;
 }
 .goods__descr {
   color: $font-primary;
   text-align: left;
-  font: $general-main-14;
+  font: $general-main-md;
   position: relative;
   align-self: stretch;
   display: flex;
@@ -714,7 +682,7 @@ a {
 .goods__descr--outlined {
   color: $font-hover;
   text-align: left;
-  font: $general-main-14;
+  font: $general-main-md;
   position: relative;
   align-self: stretch;
   display: flex;
@@ -734,13 +702,13 @@ a {
 .goods__current-price {
   color: $font-primary;
   text-align: left;
-  font: var(--mobile-header-ac-16, 700 16px/14px "PT Sans", sans-serif);
+  font: $mobile-header-md;
   position: relative;
 }
 .goods__old-price {
   color: $font-secondary;
   text-align: left;
-  font: 400 12px/14px "PT Sans", sans-serif;
+  font: $general-paragraph-sm;
   text-decoration: line-through;
   position: relative;
   display: flex;
@@ -766,7 +734,7 @@ a {
 .goods__purchase-text {
   color: $brand-primary;
   text-align: left;
-  font: $general-header-ac-14;
+  font: $general-header-md;
   position: relative;
   display: flex;
   align-items: center;
@@ -791,12 +759,14 @@ a {
   position: relative;
   cursor: pointer;
 
-  @include hover-card-effect;
-  @include mobile-only {
+  @include desktop-only {
+    @include hover-card-effect;
+  }
+
+  @include tablets-only {
     display: none;
   }
 }
-
 
 .goods__vertical-card--gray {
   border-radius: 4px;
@@ -809,7 +779,7 @@ a {
   height: 372px;
   position: relative;
 
-  @include mobile-only {
+  @include tablets-only {
     display: none;
   }
 }
@@ -853,11 +823,7 @@ a {
 }
 .goods__stock-text {
   color: $font-secondary;
-  font-family: PT Sans, sans-serif;
-  font-size: 14px;
-  font-style: normal;
-  font-weight: 700;
-  line-height: 14px;
+  font: $general-header-md;
   text-align: center;
 }
 .goods__img-shield-disc--out {
@@ -886,32 +852,16 @@ a {
   top: 12px;
 }
 
-
-
-._1920__ic-baseline-photo-camera8 {
-  opacity: 0.5;
-  position: absolute;
-  left: calc(50% - 29.5px);
-  top: calc(50% - 30px);
-  overflow: visible;
-}
-._1920__icons8 {
-  flex-shrink: 0;
-  position: relative;
-  overflow: visible;
-}
-
-
 .search-goods-mobile,
 .search-goods-mobile * {
   display: none;
-  @include mobile-only {
+  @include tablets-only {
     display: block;
     box-sizing: border-box;
   }
 }
 .search-goods-mobile {
-  @include mobile-only {
+  @include tablets-only {
     padding: 8px 16px 0 16px;
     display: flex;
     flex-direction: column;
@@ -923,7 +873,7 @@ a {
   }
 }
 .mobile__input {
-  @include mobile-only {
+  @include tablets-only {
     display: flex;
     flex-direction: column;
     gap: 6px;
@@ -935,7 +885,7 @@ a {
   }
 }
 .mobile__input-frame {
-  @include mobile-only {
+  @include tablets-only {
     display: flex;
     flex-direction: row;
     gap: 16px;
@@ -947,7 +897,7 @@ a {
   }
 }
 .autocomplete-mobile-icon {
-  @include mobile-only {
+  @include tablets-only {
     flex-shrink: 0;
     position: relative;
     overflow: visible;
@@ -955,7 +905,7 @@ a {
 }
 
 .autocomplete-search-icons {
-  @include mobile-only {
+  @include tablets-only {
     opacity: 0.4;
     flex-shrink: 0;
     position: relative;
@@ -963,9 +913,9 @@ a {
   }
 }
 .search-icon {
-  @include mobile-only {
+  @include tablets-only {
     margin-right: 16px;
-    background: var(--brand-primary, #7397f5);
+    background: $brand-primary;
     border-radius: 5px;
     padding: 12px;
     display: flex;
@@ -979,18 +929,18 @@ a {
 }
 
 .search-goods-btn {
-  @include mobile-only {
+  @include tablets-only {
     button {
       color: $bg-white;
       text-align: left;
-      font: $mobile-main-16;
+      font: $mobile-main-md;
       position: relative;
     }
   }
 }
 
 .search-mobile-outline {
-  @include mobile-only {
+  @include tablets-only {
     width: 341px;
     margin-left: 2.3rem;
     background: $tech-borderand-others;
