@@ -1,0 +1,12 @@
+@mixin mobile-only {
+  @media screen and (max-width: 768px) {
+    @content;
+  }
+}
+
+@mixin hover-card-effect {
+  &:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+}
